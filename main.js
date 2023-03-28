@@ -1,5 +1,11 @@
 const boton = document.getElementById("boton");
-const contenido = document.getElementById("contenido")
+const contenido = document.getElementById("contenido");
+const items = document.getElementById("items");
+const fecha = document.getElementById("fecha");
+
+let time = new Date();
+
+fecha.innerHTML = time.toDateString()
 
 let tareas=[];
 let i=0;
@@ -17,7 +23,7 @@ function guardarTareas(){
         document.getElementById("input").value = ""
         /*Crear div*/
         let cajaParrafo= document.createElement("div")
-        contenido.appendChild(cajaParrafo)
+        items.appendChild(cajaParrafo)
         cajaParrafo.classList.add("divTarea")
         
         /*Anadir checklist*/
@@ -31,7 +37,7 @@ function guardarTareas(){
         cajaParrafo.appendChild(parrafo);
         
         /*Cambio en el checklist y en el parrafo al darle click*/
-        checklist.addEventListener("click", ()=>{checklist.style.backgroundColor="rgba(252, 194, 159, 1)"; parrafo.classList.add("parrafoTachado")})
+        checklist.addEventListener("click", ()=>{checklist.style.backgroundColor="#04d4c3"; parrafo.classList.add("parrafoTachado");  })
         /*Anadir boton */
         let boton2 = document.createElement("i")
         cajaParrafo.appendChild(boton2)

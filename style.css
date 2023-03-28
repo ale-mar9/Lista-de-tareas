@@ -1,115 +1,184 @@
+:root{
+    --color: #F8F9FA;
+    --color2: #423a6f ;
+    --purple:#9a67ea;
+    --blue-light:#04d4c3;
+    --blue-dark:#2a73c2;
+    --green: #2c7b90;
+    --red:#f39a9a; 
+}
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;700;800&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    top: 0;
 }
 
 body{
-    background-color: #FCC29F;
+    background: linear-gradient(to bottom, var(--purple) , var(--blue-light));
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family:cursive;
+    width: 100%;
 }
 
 #contenido{
-    background-color: white;
-    max-height: fit-content;
-    min-height: 70%;
-    min-width: 25%;
-    max-width: 98%;
+    background: transparent;
+    min-width: 30%;
+    min-height: 80%;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
     align-items:center;
     justify-content:flex-start;
+    text-align: left;
     border-radius: 50px;
 }
 
 .cajaTitulo{
-    background-color: rgba(151, 161, 248, 0.79);
-    padding: 10px 0 10px 0;
-    width: 80%;
+    background-color: none;
+    width: 100%;
     border-radius: 40px;
-    color: white;
-    margin-top: 36px;
+    color:var(--color);
+    margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 105%;
+}
+
+#fecha{
+    padding: 0px 20px;
+    width: 100%;
+    margin: 0px 20px;
+    margin-bottom: 30px;
+}
+
+.agregar{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    color:var(--color);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 700;
 }
 
 h2{
-    color: rgba(151, 161, 248, 1);
-    display: flex;
-    width: 100%;
     margin-left: 20px;
+    color: var(--color);
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 20px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .linea{
-    background-color: rgba(151, 161, 248, 1);
+    background-color: rgb(5, 13, 82);
     width: 100%;
     height: 3px;
 }
 
 .botonAnadir{
-    position: absolute;
-    right: 10px;
-    top: 18% ;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    border: none;
-    color: white;
-    font-size: 20px;
-    background-color: rgba(200, 205, 255, 1);
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 10%;
+    height: 100%;
+    color: var(--purple);
+    font-size: 40px;
+    background-color: #d1c2e9;
+    font-weight: 700;
+    height: 100%;
+    border: 2px solid var(--purple);
+    border-left: none;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 0px 25px;
+    transition: .5s;
 }
 
+.botonAnadir:hover{
+    color: #d1c2e9;
+    background-color: var(--purple);
+
+}
+
+
 .inputAnadir{
-    background-color: rgba(238, 189, 104, 0);
+    background-color:var(--color);
     outline: none;
-    border: none;
+    border: 2px solid var(--purple);
+    border-right: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
     text-decoration: none;
-    width: 100%;
+    width: 90%;
     height: 100%;
-    padding: 10px 30px 10px 30px;
-    color: rgb(132, 137, 187);
-    font-size: 16px;
-    font-family:cursive;
+    padding: 20px 30px 20px 30px;
+    color:var(--green);
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .cajaInput{
-    background-color: rgba(238, 188, 104, 0.29);
     width: 90%;
-    border-radius: 40px;
-    margin: 20px 0 10px 0;
-    position: relative;
+    border-radius: 10px;
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    height: 65px;
+    margin-bottom: 30px;
+}
+
+#items{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    overflow-y: auto;
 }
 
 .divTarea{
-    background-color: rgba(238, 188, 104, 0.29);
+    background-color: var(--purple);
     width: 90%;
-    border-radius: 40px;
-    margin: 10px 0 10px 0;
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
+    border: none;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+#items::-webkit-scrollbar{
+    width: 10px;
+    background-color: none;
+}
+
+#items::-webkit-scrollbar-thumb{
+    background-color: var(--purple);
+    border-radius: 50px;
 }
 
 .checklist{
     position: absolute;
     left: 10px;
-    top:30%;
+    top:35%;
     border-radius: 50%;
     width: 15px;
     height: 15px;
     border: none;
-    background-color: rgba(151, 161, 248, 1);
+    background-color: var(--color);
 }
 
 
@@ -125,20 +194,32 @@ p{
     width: 100%;
     height: 100%;
     padding: 10px 30px 10px 30px;
-    color: rgb(132, 137, 187);
-    font-size: 16px;
+    color: var(--color);
+    font-size: 18px;
     font-family:cursive;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .parrafoTachado{
     text-decoration: line-through;
+    color: #04d4c3;
 }
 
 i{
     position: absolute;
-    top: 25%;
+    top: 30%;
     right: 10px;
-
-    color: rgb(85, 63, 38);
+    color: var(--color);
     font-size: 20px;
+}
+
+i:hover{
+    color: var(--red);
+}
+
+
+@media only screen and (max-width: 500px) {
+    #contenido{
+        width: 80%;
+    }
 }
